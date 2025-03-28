@@ -29,6 +29,7 @@ def get_curve_params() -> tuple:
             b = float(input("Enter the coefficient b: "))
         except ValueError:
             print("Invalid input. Please enter numeric values for coefficients a and b.")
+            continue
 
         if 4*a**3 + 27*b**2 == 0:
             print("The curve is singular (not valid). Please enter different coefficients.")
@@ -54,9 +55,9 @@ def get_points(a, b) -> tuple:
                 if check_correct():
                     break
             else:
-                print("The point does not lie on the curve. Please enter a valid point.")
+                print("The point does not lie on the curve. Please enter a valid point (x, y):", end=' ')
         except (ValueError, TypeError):
-            print("Invalid input. Please enter two numeric values for the point (x, y).", end=' ')
+            print("Invalid input. Please enter two numeric values for the point (x, y):", end=' ')
 
     print("Please enter the second point on the curve Q as (x, y):", end=' ')
     while True:
